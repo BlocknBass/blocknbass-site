@@ -1,0 +1,3 @@
+graft blocknbass/static
+graft blocknbass/templates
+global-excluse *.pyc
