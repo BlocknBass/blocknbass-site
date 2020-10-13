@@ -1,5 +1,6 @@
 # Project Specific
-server
+.key
+material.*.*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
