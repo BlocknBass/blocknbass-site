@@ -84,19 +84,19 @@
             <h2 class="mb-12 text-xl md:text-2xl xl:text-4xl">The minecraft DnB party</h2>
             <div class="flex mx-auto w-full md:w-min">
                 <div
-                    class="w-2/12 flex flex-col text-center align-center justify-center py-4 md:w-min md:px-12 md:py-7">
+                    class="w-1/4 flex flex-col text-center align-center justify-center py-4 md:w-min md:px-12 md:py-7">
                     <p class="d text-5xl md:text-6xl text-gray-700">00</p>
                     <p class="text-sm md:text-base xl:text-md text-purple-700 font-mc uppercase">days</p>
                 </div>
-                <div class="w-2/12 flex flex-col text-center align-center justify-center md:w-min md:px-12 md:py-7">
+                <div class="w-1/4 flex flex-col text-center align-center justify-center md:w-min md:px-12 md:py-7">
                     <p class="h text-5xl md:text-6xl text-gray-700">00</p>
                     <p class="text-sm md:text-base xl:text-md text-purple-700 font-mc uppercase">hours</p>
                 </div>
-                <div class="w-2/12  flex flex-col text-center align-center justify-center md:w-min md:px-12 md:py-7">
+                <div class="w-1/4  flex flex-col text-center align-center justify-center md:w-min md:px-12 md:py-7">
                     <p class="m text-5xl md:text-6xl text-gray-700">00</p>
                     <p class="text-sm md:text-base xl:text-md text-purple-700 font-mc uppercase">minutes</p>
                 </div>
-                <div class="w-2/12 flex flex-col text-center align-center justify-center md:w-min md:px-12 md:py-7">
+                <div class="w-1/4 flex flex-col text-center align-center justify-center md:w-min md:px-12 md:py-7">
                     <p class="s text-5xl md:text-6xl text-gray-700">00</p>
                     <p class="text-sm md:text-base xl:text-md text-purple-700 font-mc uppercase">seconds</p>
                 </div>
@@ -206,7 +206,7 @@
 
                                             <template x-if="artist.socials.spotify">
                                                 <a :href="artist.socials.spotify" target="_blank"
-                                                    class="w-8 h-8 text-gray-100 rounded-xl bg-green-500 flex justify-center items-center mr-2 hover:text-yellow-500 hover:bg-gray-100">
+                                                    class="w-8 h-8 text-gray-100 rounded-xl bg-green-500 flex justify-center items-center mr-2 hover:text-green-500 hover:bg-gray-100">
                                                     <i class="fab fa-spotify"></i>
                                                 </a>
                                             </template>
@@ -495,14 +495,6 @@
         if (eventDate.diff(moment()) > 0) {
             setInterval(() => {
                 const now = moment();
-                if (now === eventDate) {
-                    daysBox.innerText = 0
-                    hoursBox.innerText = 0
-                    minuteBox.innerText = 0
-                    secondsBox.innerText = 0
-                    return;
-                }
-                console.log(moment('2019-12-19 17:00:00').diff(moment()))
                 const dur = moment.duration(eventDate.diff(now));
                 daysBox.innerText = dur.get('days')
                 hoursBox.innerText = dur.get('hours')
