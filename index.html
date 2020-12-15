@@ -1,11 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Block&Bass</title>
+    <title>Block & Bass</title>
+    <meta name="title" content="Block & Bass">
+    <meta name="description" content="Block & Bass, The one and only minecraft drum and bass party!!">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blocknbass.com/">
+    <meta property="og:title" content="Block & Bass">
+    <meta property="og:description" content="Block & Bass, The one and only minecraft drum and bass party!!">
+    <meta property="og:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://blocknbass.com/">
+    <meta property="twitter:title" content="Block & Bass">
+    <meta property="twitter:description" content="Block & Bass, The one and only minecraft drum and bass party!!">
+    <meta property="twitter:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "c6f8054a7c274aad9ba0f27f6b8fc9f2"}'></script><!-- End Cloudflare Web Analytics -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+
+
+    <style>
+        @font-face {
+            font-family: 'minecraft';
+            src: url(/assets/fonts/Minecraft.ttf);
+        }
+
+        svg {
+            shape-rendering: crispEdges;
+        }
+
+        .font-mc {
+            font-family: 'minecraft', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .hero {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(143, 193, 243, 0.660937) 43.23%, rgba(118, 174, 220, 1) 99%), linear-gradient(0deg, rgba(162, 227, 236, 0.3), rgba(162, 227, 236, 0.3)), url(/assets/img/hero.jpg);
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .download {
+            background: linear-gradient(180deg, rgba(118, 174, 220, 1) 0%, rgba(69, 121, 255, 0.4) 50.52%, rgba(118, 174, 220, 1) 100%), linear-gradient(0deg, rgba(69, 121, 255, 0.3), rgba(69, 121, 255, 0.3)), url('https://wallpaperaccess.com/full/171177.jpg');
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .top-line {
+            background: rgb(2, 0, 36);
+            background: linear-gradient(180deg, rgba(2, 0, 36, 0) 20%, rgba(147, 197, 253, 1) 80%);
+        }
+
+        .bottom-line {
+            background: rgb(2, 0, 36);
+            background: linear-gradient(0deg, rgba(2, 0, 36, 0) 20%, rgba(147, 197, 253, 1) 80%);
+        }
+
+        .side-lines::before,
+        .side-lines::after {
+            content: ' － '
+        }
+    </style>
 </head>
-<body>
-    <h1>Hello World!</h1>
+
+<body class="bg-blue-300 bg-opacity-50">
+    <div class="hero h-screen overflow-hidden relative bg-blue-300 bg-opacity-50">
+        <div
+            class="w-full absolute text-center w-auto left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 md:p-0">
+            <h1 class="font-mc text-5xl md:text-8xl xl:text-9xl">Block & Bass</h1>
+            <h2 class="mb-12 text-xl md:text-2xl xl:text-4xl">The minecraft DnB party</h2>
+            <div class="flex mx-auto w-full md:w-min">
+                <div
+                    class="w-1/4 flex flex-col text-center align-center justify-center py-4 md:w-min md:px-12 md:py-7">
+                    <p class="d text-5xl md:text-6xl text-gray-700">00</p>
+                    <p class="text-sm md:text-base xl:text-md text-purple-700 font-mc uppercase">days</p>
+                </div>
+                <div class="w-1/4 flex flex-col text-center align-center justify-center md:w-min md:px-12 md:py-7">
+                    <p class="h text-5xl md:text-6xl text-gray-700">00</p>
+                    <p class="text-sm md:text-base xl:text-md text-purple-700 font-mc uppercase">hours</p>
+                </div>
+                <div class="w-1/4  flex flex-col text-center align-center justify-center md:w-min md:px-12 md:py-7">
+                    <p class="m text-5xl md:text-6xl text-gray-700">00</p>
+                    <p class="text-sm md:text-base xl:text-md text-purple-700 font-mc uppercase">minutes</p>
+                </div>
+                <div class="w-1/4 flex flex-col text-center align-center justify-center md:w-min md:px-12 md:py-7">
+                    <p class="s text-5xl md:text-6xl text-gray-700">00</p>
+                    <p class="text-sm md:text-base xl:text-md text-purple-700 font-mc uppercase">seconds</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <section>
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1900 600">
+                <rect width="1900" height="100" style="fill:#76aedc" />
+                <rect x="100" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="200" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="300" y="100" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="500" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="600" y="200" width="100" height="100" style="fill:#76aedc" />
+                <rect x="700" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="400" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="500" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="600" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="700" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="900" y="300" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="800" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1000" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1100" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="800" y="200" width="100" height="100" style="fill:#76aedc" />
+                <rect x="900" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1000" y="200" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1100" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="800" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="900" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1000" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1100" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1200" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1300" y="200" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1400" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1500" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1200" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1300" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1400" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1500" y="100" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1300" y="400" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1400" y="400" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1500" y="400" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1200" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1300" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1400" y="300" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1500" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1700" y="500" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1800" y="500" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1600" y="400" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1700" y="400" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="400" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1600" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1700" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1600" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1700" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1600" y="100" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1700" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="100" width="100" height="100" style="fill:#95c6e3" />
+            </svg>
+            <div>
+                <h2 class="text-4xl md:text-5xl uppercase text-center text-blue-400 w-full side-lines">lineup</h2>
+                <div class="flex justify-center">
+                    <div class="w-2/3 mx-auto" x-data="artistsData()">
+                        <template x-for="artist, i in artists">
+                            <div class="flex flex-row md:flex-row-reverse w-full"
+                                :class="{ 'md:flex-row-reverse': i % 2 === 0 }">
+                                <div class="w-0 md:w-2/5 px-2 py-10 hidden md:block"></div>
+                                <div class="md:w-1/5 flex flex-col items-center justify-center">
+                                    <div class="flex h-1/2 w-1 items-center justify-center"
+                                        :class="{ 'top-line': i === 0, 'bg-blue-300': i !== 0 }"></div>
+                                    <div class="flex h-1/2 w-1 items-center justify-center"
+                                        :class="{ 'bottom-line': i === artists.length - 1, 'bg-blue-300': i !== artists.length - 1 }">
+                                    </div>
+                                    <div
+                                        class="absolute flex flex-col justify-center h-5 w-5 rounded-full leading-none text-center z-10 bg-blue-300 font-thin">
+                                    </div>
+
+                                </div>
+                                <div class="w-full md:w-2/5 px-2 py-10">
+                                    <div class="flex flex-col w-full rounded-lg px-4 py-5"
+                                        :class="{ 'md:items-end': i % 2 === 0}">
+                                        <p class="mb-2 text-base md:text-xl text-purple-700" x-text="artist.time"></p>
+                                        <h4 class="text-gray-600 text-3xl md:text-4xl mb-4 flex font-bold justify-between"
+                                            x-text="artist.name"></h4>
+                                        <div class="flex items-center justify-start text-md">
+                                            <template x-if="artist.socials.facebook">
+                                                <a :href="artist.socials.facebook" target="_blank"
+                                                    class="w-8 h-8 text-gray-100 rounded-xl bg-blue-500 flex justify-center items-center mr-2 hover:text-blue-500 hover:bg-gray-100">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </template>
+                                            <template x-if="artist.socials.twitter">
+                                                <a :href="artist.socials.twitter" target="_blank"
+                                                    class="w-8 h-8 text-gray-100 rounded-xl bg-blue-400 flex justify-center items-center mr-2 hover:text-blue-400 hover:bg-gray-100">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            </template>
+                                            <template x-if="artist.socials.soundcloud">
+                                                <a :href="artist.socials.soundcloud" target="_blank"
+                                                    class="w-8 h-8 text-gray-100 rounded-xl bg-yellow-500 flex justify-center items-center mr-2 hover:text-yellow-500 hover:bg-gray-100">
+                                                    <i class="fab fa-soundcloud"></i>
+                                                </a>
+                                            </template>
+
+                                            <template x-if="artist.socials.spotify">
+                                                <a :href="artist.socials.spotify" target="_blank"
+                                                    class="w-8 h-8 text-gray-100 rounded-xl bg-green-500 flex justify-center items-center mr-2 hover:text-green-500 hover:bg-gray-100">
+                                                    <i class="fab fa-spotify"></i>
+                                                </a>
+                                            </template>
+                                            <template x-if="artist.socials.instagram">
+                                                <a :href="artist.socials.instagram" target="_blank"
+                                                    class="w-8 h-8 text-gray-100 rounded-xl bg-gradient-to-r hover:from-gray-100 hover:to-gray-100 from-red-400 via-pink-400 to-purple-500">
+                                                    <span
+                                                        class="h-full w-full bg-clip-text hover:text-transparent text-gray-100 bg-gradient-to-r from-red-400 via-pink-400 to-purple-500 flex justify-center items-center">
+                                                        <i class="fab fa-instagram"></i>
+                                                    </span>
+                                                </a>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1900 600"
+                class="transform rotate-180 -mb-1">
+                <rect width="1900" height="100" style="fill:#76aedc" />
+                <rect x="100" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="200" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="300" y="100" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="500" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="600" y="200" width="100" height="100" style="fill:#76aedc" />
+                <rect x="700" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="400" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="500" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="600" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="700" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="900" y="300" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="800" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1000" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1100" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="800" y="200" width="100" height="100" style="fill:#76aedc" />
+                <rect x="900" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1000" y="200" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1100" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="800" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="900" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1000" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1100" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1200" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1300" y="200" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1400" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1500" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1200" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1300" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1400" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1500" y="100" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1300" y="400" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1400" y="400" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1500" y="400" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1200" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1300" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1400" y="300" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1500" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1700" y="500" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1800" y="500" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1600" y="400" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1700" y="400" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="400" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1600" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1700" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1600" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1700" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1600" y="100" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1700" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="100" width="100" height="100" style="fill:#95c6e3" />
+            </svg>
+        </section>
+        <section class="download h-96 relative">
+            <div
+                class="absolute w-full left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-gray-200">
+                <p class="font-mc text-5xl md:text-6xl side-lines">Download</p>
+                <p class="mb-6 md:text-lg">Download the installer right here</p>
+                <a class="font-mc bg-yellow-400 block overflow-hidden rounded-2xl w-3/4 mx-auto py-3 md:w-1/3 xl:1/4 uppercase text-gray-800"
+                    href="<download link here>">
+                    <span>Download</span>
+                </a>
+            </div>
+        </section>
+        <section>
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1900 600">
+                <rect width="1900" height="100" style="fill:#76aedc" />
+                <rect x="100" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="200" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="300" y="100" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="500" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="600" y="200" width="100" height="100" style="fill:#76aedc" />
+                <rect x="700" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="400" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="500" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="600" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="700" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="900" y="300" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="800" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1000" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1100" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="800" y="200" width="100" height="100" style="fill:#76aedc" />
+                <rect x="900" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1000" y="200" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1100" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="800" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="900" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1000" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1100" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1200" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1300" y="200" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1400" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1500" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1200" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1300" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1400" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1500" y="100" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1300" y="400" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1400" y="400" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1500" y="400" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1200" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1300" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1400" y="300" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1500" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1700" y="500" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1800" y="500" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1600" y="400" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1700" y="400" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="400" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1600" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1700" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1600" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1700" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1600" y="100" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1700" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="100" width="100" height="100" style="fill:#95c6e3" />
+            </svg>
+            <div class="sm:w-11/12 container mx-auto">
+                <h2 class="text-4xl md:text-5xl mb-6 uppercase text-center text-blue-400 w-full side-lines">
+                    how to install
+                </h2>
+                <p class="text-center">Comming soon!</p>
+            </div>
+
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1900 600"
+                class="transform rotate-180 -mb-1">
+                <rect width="1900" height="100" style="fill:#76aedc" />
+                <rect x="100" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="200" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="300" y="100" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="500" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="600" y="200" width="100" height="100" style="fill:#76aedc" />
+                <rect x="700" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="400" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="500" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="600" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="700" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="900" y="300" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="800" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1000" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1100" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="800" y="200" width="100" height="100" style="fill:#76aedc" />
+                <rect x="900" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1000" y="200" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1100" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="800" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="900" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1000" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1100" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1200" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1300" y="200" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1400" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1500" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1200" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1300" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1400" y="100" width="100" height="100" style="fill:#76aedc" />
+                <rect x="1500" y="100" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1300" y="400" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1400" y="400" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1500" y="400" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1200" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1300" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1400" y="300" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1500" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1700" y="500" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1800" y="500" width="100" height="100" style="fill:#d4eef6" />
+                <rect x="1600" y="400" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1700" y="400" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="400" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1600" y="300" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1700" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="300" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1600" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1700" y="200" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="200" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1600" y="100" width="100" height="100" style="fill:#a0d8f0" />
+                <rect x="1700" y="100" width="100" height="100" style="fill:#95c6e3" />
+                <rect x="1800" y="100" width="100" height="100" style="fill:#95c6e3" />
+            </svg>
+        </section>
+    </main>
+    <footer style="background-color: #76aedc;">
+        <div class="mx-auto text-gray-600 py-1 px-3 flex justify-between items-center text-sm">
+            <div class="flex-initial">&copy; 2020 Block & Bass</div>
+            <div class="flex-initial">
+                <div class="fas fa-terminal hover:text-green-400"></div> with
+                <div class="fas fa-heart hover:text-red-600"></div> by <a class="hover:underline hover:text-gray-600"
+                    href="https://xanderd.com">XanderD.</a>
+            </div>
+        </div>
+    </footer>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script>
+    const artistsData = () => ({
+        artists: [
+            {
+                time: '17:00 - 18:00',
+                name: 'Arne',
+                socials: {
+                    twitter: 'https://twitter.com/ArneDnB',
+                    soundcloud: 'https://soundcloud.com/aaarneee',
+                    instagram: 'https://www.instagram.com/aaarneeee/',
+                    facebook: 'https://www.facebook.com/ArneDnB/'
+                }
+            },
+            {
+                time: '18:00 - 19:00',
+                name: 'Dustkey',
+                socials: {
+                    facebook: 'https://www.facebook.com/dustkey/',
+                    spotify: 'https://open.spotify.com/artist/3cFmkfAFtVpp40znDmCo0d?si=LPOTOg3yQ8yo0MAwx3emNg',
+                    soundcloud: 'https://soundcloud.com/dustkey-hq',
+                }
+            },
+            {
+                time: '19:00 - 20:00',
+                name: 'Edlan',
+                socials: {
+                    soundcloud: 'http://soundcloud.com/djedlan',
+                    facebook: 'https://www.facebook.com/djedlan/',
+                    spotify: 'https://open.spotify.com/artist/0kmYD4ijzuztxYkzJBbQQa?si=vLXWR5qZSTuINSADTb-vEQ'
+                }
+            },
+            {
+                time: '20:00 - 21:00',
+                name: 'Andromedik',
+                socials: {
+                    facebook: 'https://www.facebook.com/AndromedikMusic',
+                    spotify: 'https://open.spotify.com/artist/7miXLG9boDOGHJaEelSL7T?si=i0igRpnIS5SEh36htddrbg',
+                    soundcloud: 'https://soundcloud.com/andromedik',
+                    twitter: 'https://twitter.com/AndromedikMusic',
+                    instagram: 'https://www.instagram.com/andromedik.official/'
+                }
+            },
+            {
+                time: '21:00 - 22:00',
+                name: 'Polygon',
+                socials: {
+                    soundcloud: 'https://soundcloud.com/polygonsound',
+                    facebook: 'https://www.facebook.com/polygonsound/',
+                    spotify: 'https://open.spotify.com/artist/5BGIoAtF2cwgcydpnUyFkF?si=NZA7NpWQRDuN-c-aeFL0Fw',
+                }
+            },
+            { time: '22:00 - 23:00', name: 'Toeterboys', socials: {} }
+        ]
+    });
+</script>
+<script>
+    const qs = (s) => document.querySelector(s);
+    const qsa = (s) => document.querySelectorAll(s);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('website loaded...');
+        const eventDate = moment('2020-12-19 17:00:00');
+        const daysBox = qs('.d');
+        const hoursBox = qs('.h');
+        const minuteBox = qs('.m');
+        const secondsBox = qs('.s');
+        if (eventDate.diff(moment()) > 0) {
+            setInterval(() => {
+                const now = moment();
+                const dur = moment.duration(eventDate.diff(now));
+                daysBox.innerText = dur.get('days')
+                hoursBox.innerText = dur.get('hours')
+                minuteBox.innerText = dur.get('minutes')
+                secondsBox.innerText = dur.get('seconds')
+            }, 1000)
+        }
+    });
+</script>
+
 </html>
