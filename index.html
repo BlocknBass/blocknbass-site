@@ -495,11 +495,12 @@
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://momentjs.com/downloads/moment-timezone-with-data.min.js"></script>
 <script>
     const artistsData = () => ({
         artists: [
             {
-                time: '18:00 - 19:00',
+                time: '18:00 - 19:00 UTC',
                 name: 'Arne',
                 socials: {
                     twitter: 'https://twitter.com/ArneDnB',
@@ -509,7 +510,7 @@
                 }
             },
             {
-                time: '19:00 - 20:00',
+                time: '19:00 - 20:00 UTC',
                 name: 'Dustkey',
                 socials: {
                     facebook: 'https://www.facebook.com/dustkey/',
@@ -518,7 +519,7 @@
                 }
             },
             {
-                time: '20:00 - 21:00',
+                time: '20:00 - 21:00 UTC',
                 name: 'Edlan',
                 socials: {
                     soundcloud: 'http://soundcloud.com/djedlan',
@@ -527,7 +528,7 @@
                 }
             },
             {
-                time: '21:00 - 22:00',
+                time: '21:00 - 22:00 UTC',
                 name: 'Andromedik',
                 socials: {
                     facebook: 'https://www.facebook.com/AndromedikMusic',
@@ -538,7 +539,7 @@
                 }
             },
             {
-                time: '22:00 - 23:00',
+                time: '22:00 - 23:00 UTC',
                 name: 'Polygon',
                 socials: {
                     soundcloud: 'https://soundcloud.com/polygonsound',
@@ -547,7 +548,7 @@
                 }
             },
             {
-                time: '23:00 - 24:00',
+                time: '23:00 - 24:00 UTC',
                 name: 'Toeterboys',
                 socials: {
                     soundcloud: ' https://soundcloud.com/toeter-boys'
@@ -562,14 +563,14 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         console.log('website loaded...');
-        const eventDate = moment('2020-12-19 18:00:00');
+        const eventDate = moment.tz('2020-12-19 18:00:00', 'UTC');
         const daysBox = qs('.d');
         const hoursBox = qs('.h');
         const minuteBox = qs('.m');
         const secondsBox = qs('.s');
         if (eventDate.diff(moment()) > 0) {
             const interval = setInterval(() => {
-                const now = moment();
+                const now = moment.tz('UTC');
                 const dur = moment.duration(eventDate.diff(moment()));
                 if (dur < 0) {
                     clearInterval(interval);
