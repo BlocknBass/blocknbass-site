@@ -499,7 +499,7 @@
     const artistsData = () => ({
         artists: [
             {
-                time: '17:00 - 18:00',
+                time: '18:00 - 19:00',
                 name: 'Arne',
                 socials: {
                     twitter: 'https://twitter.com/ArneDnB',
@@ -509,7 +509,7 @@
                 }
             },
             {
-                time: '18:00 - 19:00',
+                time: '19:00 - 20:00',
                 name: 'Dustkey',
                 socials: {
                     facebook: 'https://www.facebook.com/dustkey/',
@@ -518,7 +518,7 @@
                 }
             },
             {
-                time: '19:00 - 20:00',
+                time: '20:00 - 21:00',
                 name: 'Edlan',
                 socials: {
                     soundcloud: 'http://soundcloud.com/djedlan',
@@ -527,7 +527,7 @@
                 }
             },
             {
-                time: '20:00 - 21:00',
+                time: '21:00 - 22:00',
                 name: 'Andromedik',
                 socials: {
                     facebook: 'https://www.facebook.com/AndromedikMusic',
@@ -538,7 +538,7 @@
                 }
             },
             {
-                time: '21:00 - 22:00',
+                time: '22:00 - 23:00',
                 name: 'Polygon',
                 socials: {
                     soundcloud: 'https://soundcloud.com/polygonsound',
@@ -547,7 +547,7 @@
                 }
             },
             {
-                time: '22:00 - 23:00',
+                time: '23:00 - 24:00',
                 name: 'Toeterboys',
                 socials: {
                     soundcloud: ' https://soundcloud.com/toeter-boys'
@@ -562,15 +562,18 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         console.log('website loaded...');
-        const eventDate = moment('2020-12-19 17:00:00');
+        const eventDate = moment('2020-12-19 18:00:00');
         const daysBox = qs('.d');
         const hoursBox = qs('.h');
         const minuteBox = qs('.m');
         const secondsBox = qs('.s');
         if (eventDate.diff(moment()) > 0) {
-            setInterval(() => {
+            const interval = setInterval(() => {
                 const now = moment();
-                const dur = moment.duration(eventDate.diff(now));
+                const dur = moment.duration(eventDate.diff(moment()));
+                if (dur < 0) {
+                    clearInterval(interval);
+                }
                 daysBox.innerText = dur.get('days')
                 hoursBox.innerText = dur.get('hours')
                 minuteBox.innerText = dur.get('minutes')
